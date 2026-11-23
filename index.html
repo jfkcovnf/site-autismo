@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f6f7f3">
+    <title>CONECTA | Seu espaço, seu ritmo</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-logo">co</div>
+            <div>
+                <h2>CONECTA</h2>
+                <span>Seu espaço, seu ritmo.</span>
+            </div>
+        </div>
+
+        <div class="menu-caption">ESPAÇO PRINCIPAL</div>
+
+        <nav class="menu">
+            <button class="menu-link active" data-page="inicio">
+                <span>⌂</span> Visão geral
+            </button>
+            <button class="menu-link" data-page="rotina">
+                <span>▦</span> Minha rotina
+            </button>
+            <button class="menu-link" data-page="tarefas">
+                <span>✓</span> Tarefas
+            </button>
+            <button class="menu-link" data-page="comunicacao">
+                <span>☷</span> Comunicação
+            </button>
+            <button class="menu-link" data-page="foco">
+                <span>◷</span> Concentração
+            </button>
+            <button class="menu-link" data-page="sentimentos">
+                <span>♡</span> Sentimentos
+            </button>
+            <button class="menu-link" data-page="anotacoes">
+                <span>✎</span> Anotações
+            </button>
+        </nav>
+
+        <div class="menu-caption preferences-caption">PREFERÊNCIAS</div>
+
+        <nav class="menu">
+            <button class="menu-link" data-page="acessibilidade">
+                <span>⚙</span> Acessibilidade
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="support-card">
+                <span>✦</span>
+                <h3>Você está no seu espaço.</h3>
+                <p>Sem pressa. Sem cobranças. Um passo de cada vez.</p>
+            </div>
+            <span class="version">CONECTA 2.0 · 2026</span>
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <div class="header-left">
+                <button id="menuToggle" class="mobile-menu" aria-label="Abrir menu">☰</button>
+                <div>
+                    <span class="page-location">MEU ESPAÇO / <span id="pageLabel">VISÃO GERAL</span></span>
+                    <h1 id="pageHeading">Olá! Que bom ter você aqui.</h1>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="date-box">
+                    <span>HOJE</span>
+                    <strong id="currentDate">--/--/----</strong>
+                </div>
+                <div class="profile-avatar">C</div>
+            </div>
+        </header>
+
+        <!-- VISÃO GERAL -->
+
+        <section class="page active" id="inicio">
+
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="hero-tag">SEJA BEM-VINDO(A)</span>
+                    <h2>Um dia de cada vez.<br>Do seu jeito.</h2>
+                    <p>Organize sua rotina, descubra suas necessidades e encontre seu próprio ritmo.</p>
+                    <button class="btn-primary" data-go="rotina">Ver minha rotina <span>→</span></button>
+                </div>
+                <div class="hero-decoration" aria-hidden="true">
+                    <div class="sun">☀</div>
+                    <div class="sun-text">Seu tempo.<br>Suas escolhas.</div>
+                </div>
+            </div>
+
+            <div class="section-title">
+                <div>
+                    <h2>Resumo do seu dia</h2>
+                    <p>Uma visão simples para ajudar na organização.</p>
+                </div>
+            </div>
+
+            <div class="overview-grid">
+                <article class="overview-card">
+                    <div class="overview-icon icon-green">✓</div>
+                    <span>Tarefas concluídas</span>
+                    <strong id="doneNumber">0</strong>
+                    <small>Pequenas conquistas.</small>
+                </article>
+
+                <article class="overview-card">
+                    <div class="overview-icon icon-purple">◷</div>
+                    <span>Tarefas pendentes</span>
+                    <strong id="pendingNumber">0</strong>
+                    <small>Sem pressa para concluir.</small>
+                </article>
+
+                <article class="overview-card">
+                    <div class="overview-icon icon-orange">▦</div>
+                    <span>Rotina organizada</span>
+                    <strong id="routineNumber">0%</strong>
+                    <small>Seu progresso.</small>
+                </article>
+            </div>
+
+            <div class="content-grid">
+
+                <article class="card">
+                    <div class="card-heading">
+                        <div>
+                            <h3>Próximas atividades</h3>
+                            <p>O que vem pela frente?</p>
+                        </div>
+                        <button class="link-button" data-go="tarefas">Ver tudo →</button>
+                    </div>
+                    <div id="homeTasks" class="task-list"></div>
+                </article>
+
+                <article class="card">
+                    <div class="card-heading">
+                        <div>
+                            <h3>Como você está?</h3>
+                            <p>Escolha o que representa seu momento.</p>
+                        </div>
+                    </div>
+
+                    <div class="emotion-shortcuts">
+                        <button data-mood="Feliz">😊<span>Feliz</span></button>
+                        <button data-mood="Tranquilo">😌<span>Bem</span></button>
+                        <button data-mood="Cansado">😴<span>Cansado</span></button>
+                        <button data-mood="Ansioso">😟<span>Ansioso</span></button>
+                    </div>
+
+                    <button class="btn-secondary wide" data-go="sentimentos">Registrar sentimento</button>
+                </article>
+
+            </div>
+
+            <article class="message-card">
+                <div class="message-symbol">✳</div>
+                <div>
+                    <strong>Não existe uma maneira única de viver o dia.</strong>
+                    <p>Você pode adaptar este espaço às suas necessidades.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- ROTINA -->
+
+        <section class="page" id="rotina">
+
+            <div class="section-title">
+                <div>
+                    <h2>Minha rotina visual</h2>
+                    <p>Organize suas atividades com cartões simples e visuais.</p>
+                </div>
+                <button class="btn-primary" id="addRoutine">+ Nova atividade</button>
+            </div>
+
+            <div class="routine-banner">
+                <span>🌱</span>
+                <div>
+                    <strong>Seu dia, organizado em etapas.</strong>
+                    <p>Marque cada atividade quando desejar. Você pode adaptar sua sequência.</p>
+                </div>
+            </div>
+
+            <div class="routine-grid" id="routineGrid"></div>
+
+            <article class="card progress-card">
+                <div class="card-heading">
+                    <div>
+                        <h3>Meu progresso</h3>
+                        <p>Atividades realizadas da sua rotina.</p>
+                    </div>
+                    <strong id="routinePercent">0%</strong>
+                </div>
+                <div class="progress-track">
+                    <div id="routineBar"></div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- TAREFAS -->
+
+        <section class="page" id="tarefas">
+
+            <div class="section-title">
+                <div>
+                    <h2>Minhas tarefas</h2>
+                    <p>Divida seu dia em atividades menores.</p>
+                </div>
+                <button class="btn-primary" id="newTask">+ Adicionar tarefa</button>
+            </div>
+
+            <div class="card">
+                <div class="filter-row">
+                    <button class="filter active" data-filter="all">Todas</button>
+                    <button class="filter" data-filter="pending">Pendentes</button>
+                    <button class="filter" data-filter="done">Concluídas</button>
+                </div>
+                <div class="task-list" id="allTasks"></div>
+            </div>
+
+        </section>
+
+        <!-- COMUNICAÇÃO -->
+
+        <section class="page" id="comunicacao">
+
+            <div class="section-title">
+                <div>
+                    <h2>Comunicação</h2>
+                    <p>Uma forma simples de expressar o que você precisa.</p>
+                </div>
+            </div>
+
+            <div class="communication-grid" id="communicationGrid"></div>
+
+            <article class="card custom-communication">
+                <h3>Minha própria mensagem</h3>
+                <p>Escreva uma mensagem que deseja compartilhar.</p>
+                <textarea id="customMessage" placeholder="Digite sua mensagem..."></textarea>
+                <button class="btn-primary" id="copyMessage">Copiar mensagem</button>
+            </article>
+
+        </section>
+
+        <!-- CONCENTRAÇÃO -->
+
+        <section class="page" id="foco">
+
+            <div class="section-title">
+                <div>
+                    <h2>Meu momento de concentração</h2>
+                    <p>Escolha um tempo confortável para sua atividade.</p>
+                </div>
+            </div>
+
+            <div class="focus-layout">
+
+                <article class="focus-display">
+                    <span class="focus-tag">SEU TEMPO</span>
+                    <div id="timer">25:00</div>
+                    <p id="timerMessage" aria-live="polite">Quando estiver pronto, podemos começar.</p>
+
+                    <div class="timer-buttons">
+                        <button class="btn-primary" id="startTimer">Começar</button>
+                        <button class="btn-secondary" id="pauseTimer">Pausar</button>
+                        <button class="btn-secondary" id="resetTimer">Reiniciar</button>
+                    </div>
+                </article>
+
+                <article class="card focus-settings">
+                    <h3>Personalize seu tempo</h3>
+
+                    <label for="focusTime">Tempo de concentração (minutos)</label>
+                    <input id="focusTime" type="number" min="1" max="120" value="25">
+
+                    <label for="restTime">Tempo de descanso (minutos)</label>
+                    <input id="restTime" type="number" min="1" max="60" value="5">
+
+                    <button class="btn-primary wide" id="applyTimer">Aplicar configurações</button>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- SENTIMENTOS -->
+
+        <section class="page" id="sentimentos">
+
+            <div class="section-title">
+                <div>
+                    <h2>Meu espaço de sentimentos</h2>
+                    <p>Reconhecer como você está também é importante.</p>
+                </div>
+            </div>
+
+            <article class="card mood-card">
+                <h3>Como estou me sentindo?</h3>
+                <p>Escolha uma opção. Não existe resposta errada.</p>
+
+                <div class="mood-options" id="moodOptions">
+                    <button data-mood="Muito feliz">😄<span>Muito feliz</span></button>
+                    <button data-mood="Feliz">😊<span>Feliz</span></button>
+                    <button data-mood="Tranquilo">😌<span>Tranquilo</span></button>
+                    <button data-mood="Cansado">😴<span>Cansado</span></button>
+                    <button data-mood="Triste">😢<span>Triste</span></button>
+                    <button data-mood="Ansioso">😟<span>Ansioso</span></button>
+                    <button data-mood="Sobrecarregado">😣<span>Sobrecarregado</span></button>
+                    <button data-mood="Confuso">😕<span>Confuso</span></button>
+                </div>
+
+                <div class="selected-mood" id="selectedMood">Nenhum sentimento selecionado.</div>
+
+                <label for="moodDescription">Quer escrever algo sobre seu momento?</label>
+                <textarea id="moodDescription" placeholder="Escreva se desejar..."></textarea>
+
+                <button class="btn-primary" id="saveMood">Salvar registro</button>
+            </article>
+
+            <article class="card">
+                <h3>Meu histórico</h3>
+                <div id="moodHistory"></div>
+            </article>
+
+        </section>
+
+        <!-- ANOTAÇÕES -->
+
+        <section class="page" id="anotacoes">
+
+            <div class="section-title">
+                <div>
+                    <h2>Meu caderno</h2>
+                    <p>Um lugar para guardar suas ideias e lembretes.</p>
+                </div>
+            </div>
+
+            <article class="card note-form">
+                <label for="noteTitle">Título da anotação</label>
+                <input id="noteTitle" type="text" placeholder="Ex: Ideias para amanhã">
+
+                <label for="noteContent">Conteúdo</label>
+                <textarea id="noteContent" placeholder="Escreva aqui..."></textarea>
+
+                <button class="btn-primary" id="saveNote">Salvar anotação</button>
+            </article>
+
+            <div class="notes-grid" id="notesGrid"></div>
+
+        </section>
+
+        <!-- ACESSIBILIDADE -->
+
+        <section class="page" id="acessibilidade">
+
+            <div class="section-title">
+                <div>
+                    <h2>Meu ambiente</h2>
+                    <p>Configure a plataforma conforme suas preferências.</p>
+                </div>
+            </div>
+
+            <article class="card accessibility-card">
+
+                <div class="setting">
+                    <div>
+                        <strong>Tamanho das letras</strong>
+                        <p>Escolha um tamanho confortável.</p>
+                    </div>
+                    <div class="font-buttons">
+                        <button id="fontDown">A−</button>
+                        <button id="fontUp">A+</button>
+                    </div>
+                </div>
+
+                <div class="setting">
+                    <div>
+                        <strong>Alto contraste</strong>
+                        <p>Destaca textos e elementos.</p>
+                    </div>
+                    <input type="checkbox" id="contrast">
+                </div>
+
+                <div class="setting">
+                    <div>
+                        <strong>Reduzir animações</strong>
+                        <p>Reduz movimentos da interface.</p>
+                    </div>
+                    <input type="checkbox" id="motion">
+                </div>
+
+                <div class="setting">
+                    <div>
+                        <strong>Cores suaves</strong>
+                        <p>Utiliza uma aparência mais suave.</p>
+                    </div>
+                    <input type="checkbox" id="soft">
+                </div>
+
+                <div class="setting">
+                    <div>
+                        <strong>Maior espaçamento</strong>
+                        <p>Amplia os espaços entre os elementos.</p>
+                    </div>
+                    <input type="checkbox" id="spacing">
+                </div>
+
+                <button class="btn-secondary" id="resetSettings">Restaurar configurações</button>
+
+            </article>
+
+            <article class="message-card">
+                <div class="message-symbol">♡</div>
+                <div>
+                    <strong>Suas preferências importam.</strong>
+                    <p>As configurações podem ser alteradas sempre que você quiser.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <footer>
+            CONECTA 2.0 · Desenvolvido para promover autonomia e inclusão.
+        </footer>
+
+    </main>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="./script.js"></script>
+</body>
+</html>
